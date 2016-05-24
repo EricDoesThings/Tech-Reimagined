@@ -1,0 +1,64 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "inventory": [
+      {}
+    ],
+    "oretype": {
+      "copper": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Copper"
+        }
+      },
+      "tin": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Tin"
+        }
+      },
+      "silver": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Silver"
+        }
+      },
+      "lead": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Lead"
+        }
+      },
+      "nickel": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Nickel"
+        }
+      },
+      "rutile": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Rutile"
+        }
+      },
+      "titanium": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Titanium"
+        }
+      },
+      "bronze": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Bronze"
+        }
+      },
+      "electrum": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Electrum"
+        }
+      },
+      "steel": {
+        "textures": {
+          "all": "techreimagined:blocks/ores/blocks/Steel"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+//Misc
+itemGroup.techreimagined.power=§eTech Reimagined (§cPower§e)
+itemGroup.techreimagined.ores=§eTech Reimagined (§9Ores§e)
+itemGroup.techreimagined.tools=§eTech Reimagined (§aTools§e)
+itemGroup.techreimagined.machines=§eTech Reimagined (§dMachines§e)
+itemGroup.techreimagined.misc=§eTech Reimagined (§bMisc§e)
+
+//Messages
+message.techreimagined.panel.status=§fThe panel has §e%dT§8/§e%dT§f. Generating §e%dT§f per tick.
+
+//Tools
+item.techreimagined.wrench.name=§eTechnologic Wrench
+item.techreimagined.powerprobe.name=§ePower Probe
+item.techreimagined.fluidprobe.name=§eFluid Probe
+message.techreimagined.powerprobe.container=§e%dT§8/§e%dT§f.
+message.techreimagined.powerprobe.producer=§e%dT§8/§e%dT§f. Generating §e%dT§f a tick.
+
+message.techreimagined.fluidprobe=§e%s §fContains §e%dMb§8/§e%dMb §fof §e%s§f.
+message.techreimagined.fluidprobe.empty=§e%s §fContains no fluid.
+
+tooltip.techreimagined.powerprobe.text=%sShows power level for Tesla machines.
+tooltip.techreimagined.fluidprobe.text=%sShows fluid level for any Fluid holder.
+
+//Upgrades
+item.techreimagined.automationupgrade.name=Automation Circuit
+item.techreimagined.redstoneupgrade.name=Redstone Circuit
+item.techreimagined.craftingupgrade.name=Crafting Circuit
+tooltip.techreimagined.upgrade.text=%sWorks in any TechReimagined machine
+
+//Machines
+//Basic
+tile.techreimagined.pump.name=Fluid Translocator
+tooltip.techreimagined.pump.text=%sIts just pump.
+
+
+//Ores
+tile.techreimagined.ore.copper.name=Copper Ore
+tile.techreimagined.ore.tin.name=Tin Ore
+tile.techreimagined.ore.lead.name=Lead Ore
+tile.techreimagined.ore.silver.name=Silver Ore
+tile.techreimagined.ore.nickel.name=Nickel Ore
+
+tile.techreimagined.block.nickel.name=Nickel Block
+tile.techreimagined.block.tin.name=Tin Block
+tile.techreimagined.block.lead.name=Lead Block
+tile.techreimagined.block.silver.name=Silver Block
+tile.techreimagined.block.copper.name=Copper Block
+tile.techreimagined.block.electrum.name=Electrum Block
+
+
+//Items
+item.techreimagined.debug.name=Debugger
+item.techreimagined.tesladebug.name=Tesla Debugger
+item.techreimagined.fluiddebug.name=Fluid Debugger
