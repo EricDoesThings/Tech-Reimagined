@@ -1,0 +1,44 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "up": "techreimagined:blocks/machines/industrial/FurnaceTop",
+      "down": "techreimagined:blocks/machines/industrial/FurnaceBottom",
+      "north": "techreimagined:blocks/machines/industrial/FurnaceFront",
+      "east": "techreimagined:blocks/machines/industrial/FurnaceLeft",
+      "west": "techreimagined:blocks/machines/industrial/FurnaceRight",
+      "south": "techreimagined:blocks/machines/industrial/FurnaceBack",
+      "particle": "techreimagined:blocks/machines/industrial/FurnaceFront"
+    },
+    "model": "minecraft:cube",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "inventory": [
+      {}
+    ],
+    "facing": {
+      "west": {
+        "y": -90
+      },
+      "east": {
+        "y": 90
+      },
+      "north": {
+      },
+      "south": {
+        "y": 180
+      }
+    },
+    "working": {
+      "true": {
+        "textures": {
+          "north": "techreimagined:blocks/machines/industrial/FurnaceFrontOn"
+        }
+      },
+      "false": {
+
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "techreimagined",
+  "name": "Tech Reimagined",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["TheCodedOne"],
+  "credits": "Special thanks to everyone that has contributed on Github",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

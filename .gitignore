@@ -1,11 +1,18 @@
-.gradle
-build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Cache of project
-.gradletasknamecache
+/*
+!wercker.yml
+!/.gitignore
+!/.gitmodules
+!/src
+!/gradle
+!/gradlew
+!/gradlew.bat
+!/README.md
+!/License.txt
+!/LICENSE
+!/build.gradle
+!/build.properties
+!/build.bat
+!/build.sh
+!/gradle.properties
+gradle/wrapper/gradle-wrapper.jar
+.DS_Store

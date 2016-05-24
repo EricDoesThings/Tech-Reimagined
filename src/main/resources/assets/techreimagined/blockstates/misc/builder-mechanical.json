@@ -1,0 +1,34 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "up": "techreimagined:blocks/machines/mechanical/BuilderTop",
+      "down": "techreimagined:blocks/machines/mechanical/BuilderBottom",
+      "north": "techreimagined:blocks/machines/mechanical/BuilderFront",
+      "east": "techreimagined:blocks/machines/mechanical/BuilderLeft",
+      "west": "techreimagined:blocks/machines/mechanical/BuilderRight",
+      "south": "techreimagined:blocks/machines/mechanical/BuilderBack",
+      "particle": "techreimagined:blocks/machines/mechanical/BuilderFront"
+    },
+    "model": "minecraft:cube",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "inventory": [
+      {}
+    ],
+    "facing": {
+      "west": {
+        "y": -90
+      },
+      "east": {
+        "y": 90
+      },
+      "north": {
+      },
+      "south": {
+        "y": 180
+      }
+    }
+  }
+}

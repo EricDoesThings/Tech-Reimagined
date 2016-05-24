@@ -1,0 +1,34 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "up": "techreimagined:blocks/machines/industrial/PulverizerTop",
+      "down": "techreimagined:blocks/machines/industrial/PulverizerBottom",
+      "north": "techreimagined:blocks/machines/industrial/PulverizerFront",
+      "east": "techreimagined:blocks/machines/industrial/PulverizerLeft",
+      "west": "techreimagined:blocks/machines/industrial/PulverizerRight",
+      "south": "techreimagined:blocks/machines/industrial/PulverizerBack",
+      "particle": "techreimagined:blocks/machines/industrial/PulverizerFront"
+    },
+    "model": "minecraft:cube",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "inventory": [
+      {}
+    ],
+    "facing": {
+      "west": {
+        "y": -90
+      },
+      "east": {
+        "y": 90
+      },
+      "north": {
+      },
+      "south": {
+        "y": 180
+      }
+    }
+  }
+}

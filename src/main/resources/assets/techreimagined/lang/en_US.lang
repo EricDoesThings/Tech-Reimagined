@@ -1,0 +1,37 @@
+//Misc
+itemGroup.techreimagined.power=§eTech Reimagined (§cPower§e)
+itemGroup.techreimagined.ores=§eTech Reimagined (§9Ores§e)
+itemGroup.techreimagined.tools=§eTech Reimagined (§aTools§e)
+itemGroup.techreimagined.machines=§eTech Reimagined (§dMachines§e)
+itemGroup.techreimagined.misc=§eTech Reimagined (§bMisc§e)
+
+//Messages
+message.techreimagined.panel.status=§fThe panel has §e%dT§8/§e%dT§f. Generating §e%dT§f per tick.
+
+//Tools
+item.techreimagined.wrench.name=§eTechnologic Wrench
+item.techreimagined.powerprobe.name=§ePower Probe
+message.techreimagined.powerprobe.container=§e%dT§8/§e%dT
+message.techreimagined.powerprobe.producer=§e%dT§8/§e%dT§f. Generating §e%dT§f a tick.
+
+item.techreimagined.powerprobe.info=%sShows power level for Tesla machines.
+
+//Machines
+//Basic
+tile.techreimagined.pump.name=Fluid Translocator
+tile.techreimagined.pump.info=%sIts just pump.
+
+
+//Ores
+tile.techreimagined.ore.copper.name=Copper Ore
+tile.techreimagined.ore.tin.name=Tin Ore
+tile.techreimagined.ore.lead.name=Lead Ore
+tile.techreimagined.ore.silver.name=Silver Ore
+tile.techreimagined.ore.nickel.name=Nickel Ore
+
+tile.techreimagined.block.nickel.name=Nickel Block
+tile.techreimagined.block.tin.name=Tin Block
+tile.techreimagined.block.lead.name=Lead Block
+tile.techreimagined.block.silver.name=Silver Block
+tile.techreimagined.block.copper.name=Copper Block
+tile.techreimagined.block.electrum.name=Electrum Block
