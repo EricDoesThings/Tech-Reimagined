@@ -53,16 +53,11 @@ public class PumpTeslaContainer implements ITeslaHolder, ITeslaConsumer,ITeslaUt
 
     @Override
     public long givePower(long power, boolean simulated) {
-<<<<<<< HEAD
         long addedPower;
         if(power+storedPower>getCapacity())
             addedPower=0;
         else
             addedPower=power;
-=======
-
-        final long addedPower = Math.min(this.storedPower, power);
->>>>>>> development
         if(!simulated)
             this.storedPower += addedPower;
         return addedPower;

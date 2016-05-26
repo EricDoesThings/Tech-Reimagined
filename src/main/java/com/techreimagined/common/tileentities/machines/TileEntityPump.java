@@ -1,7 +1,6 @@
 package com.techreimagined.common.tileentities.machines;
 
 import com.techreimagined.common.tileentities.TileEntityBase;
-<<<<<<< HEAD
 import com.techreimagined.common.util.fluid.Tank;
 import net.darkhax.tesla.capability.TeslaCapabilities;
 import net.minecraft.block.Block;
@@ -14,16 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.*;
-=======
-import com.techreimagined.common.util.fluid.FluidUtils;
-import com.techreimagined.common.util.fluid.Tank;
-import net.darkhax.tesla.capability.TeslaCapabilities;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ITickable;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fluids.FluidStack;
->>>>>>> development
 
 /* You are free to:
  * 
@@ -41,7 +30,6 @@ import net.minecraftforge.fluids.FluidStack;
  * You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
  * No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
  */
-<<<<<<< HEAD
 public class TileEntityPump extends TileEntityBase implements ITickable, IFluidHandler {
 
     private final PumpTeslaContainer container;
@@ -51,12 +39,6 @@ public class TileEntityPump extends TileEntityBase implements ITickable, IFluidH
     public static int BUCKET_VOLUME = FluidContainerRegistry.BUCKET_VOLUME;
     public static int MAX_LIQUID = BUCKET_VOLUME * 16;
     public Tank tank = new Tank("pumpTank",MAX_LIQUID,this);
-=======
-public class TileEntityPump extends TileEntityBase implements ITickable {
-
-    private final PumpTeslaContainer container;
-    public Tank tank = new Tank("TilePump", 10000, this);
->>>>>>> development
 
     public TileEntityPump() {
         this.container = new PumpTeslaContainer();
@@ -65,19 +47,11 @@ public class TileEntityPump extends TileEntityBase implements ITickable {
     @Override
     public void update () {
         super.update();
-<<<<<<< HEAD
         if(!worldObj.isRemote && worldObj.getTotalWorldTime() % 10 == 0 && tank.isFull() && tank.getCapacity() - tank.getFluidAmount() >= BUCKET_VOLUME && container.canUseEnergy(50)){
             FluidStack fluidStack = drainBlock(worldObj, pos.down(), false);
             if(fluidStack != null && container.getStoredPower()>=50) {
                     fill(EnumFacing.UP,drainBlock(worldObj,pos.down(),true),true);
                     container.setPower(container.getStoredPower()-50);
-=======
-        if(!worldObj.isRemote && worldObj.getTotalWorldTime() % 10 == 0 && !tank.isFull() && tank.getCapacity() - tank.getFluidAmount() >= 1000 && container.canUseEnergy(50)){
-            FluidStack fluidStack = FluidUtils.drainBlock(worldObj,pos.down(),false);
-            if(fluidStack!=null) {
-                tank.fill(FluidUtils.drainBlock(worldObj,pos,true),true);
-                container.useEnergy(50,true);
->>>>>>> development
             }
             tank.compareAndUpdate();
         }
@@ -116,7 +90,6 @@ public class TileEntityPump extends TileEntityBase implements ITickable {
         return super.hasCapability(capability, facing);
     }
 
-<<<<<<< HEAD
     // IFluidHandler implementation.
 
     public static FluidStack drainBlock(World world, BlockPos pos, boolean doDrain){
@@ -185,7 +158,4 @@ public class TileEntityPump extends TileEntityBase implements ITickable {
     public FluidTankInfo[] getTankInfo(EnumFacing from) {
         return new FluidTankInfo[] { tank.getInfo() };
     }
-=======
-
->>>>>>> development
 }

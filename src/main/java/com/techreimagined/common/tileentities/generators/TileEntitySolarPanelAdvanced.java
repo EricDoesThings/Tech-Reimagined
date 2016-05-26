@@ -28,11 +28,7 @@ public class TileEntitySolarPanelAdvanced extends TileEntityBase implements ITic
     private final SolarTeslaContainer container;
 
     public TileEntitySolarPanelAdvanced() {
-<<<<<<< HEAD
         this.container = new SolarTeslaContainer(this);
-=======
-        this.container = new SolarTeslaContainer();
->>>>>>> development
     }
 
     @Override

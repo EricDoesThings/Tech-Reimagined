@@ -2,18 +2,12 @@ package com.techreimagined.common.tileentities.generators;
 
 import com.techreimagined.common.tileentities.TileEntityBase;
 import com.techreimagined.common.util.TileHelper;
-<<<<<<< HEAD
 import net.darkhax.tesla.api.ITeslaConsumer;
 import net.darkhax.tesla.api.ITeslaHolder;
 import net.darkhax.tesla.capability.TeslaCapabilities;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-=======
-import net.darkhax.tesla.capability.TeslaCapabilities;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.nbt.NBTTagCompound;
->>>>>>> development
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
@@ -41,16 +35,11 @@ public class TileEntitySolarPanel extends TileEntityBase implements ITickable {
     private final SolarTeslaContainer container;
 
     public TileEntitySolarPanel() {
-<<<<<<< HEAD
         this.container = new SolarTeslaContainer(this);
-=======
-        this.container = new SolarTeslaContainer();
->>>>>>> development
     }
 
     @Override
     public void update () {
-<<<<<<< HEAD
         if (this.hasWorldObj() && !this.worldObj.provider.getHasNoSky())
             this.container.generatePower();
 
@@ -77,11 +66,6 @@ public class TileEntitySolarPanel extends TileEntityBase implements ITickable {
                 tile.getCapability(TeslaCapabilities.CAPABILITY_CONSUMER,side).givePower(container.takePower(10,false),false);
             }
         }
-=======
-
-        if (this.hasWorldObj() && !this.worldObj.provider.getHasNoSky() && this.worldObj.canBlockSeeSky(this.pos.offset(EnumFacing.UP)) && !this.worldObj.isRaining() && this.worldObj.getSkylightSubtracted() == 0 && this.container.getStoredPower() != this.container.getCapacity())
-            this.container.generatePower();
->>>>>>> development
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.techreimagined.api;
 
+import com.techreimagined.api.features.DimensionType;
 import net.minecraft.util.IStringSerializable;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,16 +35,21 @@ public enum EnumOres implements IStringSerializable {
     SILVER("Silver", 5, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
     LEAD("Lead", 6, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
     NICKEL("Nickel", 7, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
+    //Nether
+    CHROMITE("Chromite", 8,DimensionType.NETHER, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
+    MAGNETITE("Magnetite", 9,DimensionType.NETHER, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
+    //End
+
 
     // Alloys
-    TITANIUM("Titanium", 9, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
-    BRONZE("Bronze", 10, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
-    ELECTRUM("Electrum", 11, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
-    STEEL("Steel", 12, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
+    TITANIUM("Titanium", 10, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
+    BRONZE("Bronze", 11, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
+    ELECTRUM("Electrum", 12, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
+    STEEL("Steel", 13, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
 
     // Misc Gears
-    WOOD("Wood", 13, EnumOreType.GEAR, EnumOreType.VANILLA),
-    COBBLESTONE("Stone", 14, EnumOreType.GEAR, EnumOreType.VANILLA),;
+    WOOD("Wood", 14, EnumOreType.GEAR, EnumOreType.VANILLA),
+    COBBLESTONE("Stone", 15, EnumOreType.GEAR, EnumOreType.VANILLA),;
 
     private static final EnumOres[] META_LOOKUP = new EnumOres[values().length];
 
@@ -61,12 +66,24 @@ public enum EnumOres implements IStringSerializable {
 
     private final String name;
     private final int meta;
+    private final DimensionType dimension;
     private final EnumOreType[] enumOresTypeList;
 
-    EnumOres(String name, int meta, EnumOreType... oreTypes) {
+    EnumOres(String name,int meta, EnumOreType... type) {
+        this(name,meta,null,type);
+    }
+
+    EnumOres(String name, int meta, DimensionType d, EnumOreType... oreTypes) {
         this.name = name;
         this.meta = meta;
         this.enumOresTypeList = oreTypes;
+        if(this.isTypeSet(EnumOreType.ORE)&&d!=null){
+            this.dimension=d;
+        } else if(this.isTypeSet(EnumOreType.ORE)&&d==null) {
+            this.dimension=DimensionType.OVERWORLD;
+        } else {
+            this.dimension=null;
+        }
     }
 
     public static EnumOres byMeta(int meta) {
@@ -91,6 +108,9 @@ public enum EnumOres implements IStringSerializable {
 
     public int getMeta() {
         return this.meta;
+    }
+    public DimensionType getDimension() {
+        return this.dimension;
     }
 
     public String getUnlocalizedName() {

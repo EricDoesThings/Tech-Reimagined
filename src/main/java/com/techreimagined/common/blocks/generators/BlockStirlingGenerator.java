@@ -1,7 +1,6 @@
 package com.techreimagined.common.blocks.generators;
 
 import com.techreimagined.TechReimaginedCreativeTabs;
-<<<<<<< HEAD
 import com.techreimagined.api.TechLevel;
 import com.techreimagined.common.blocks.BlockTechBase;
 import com.techreimagined.common.tileentities.generators.TileEntityStirlingGenerator;
@@ -23,12 +22,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
-=======
-import com.techreimagined.common.blocks.BlockTileBase;
-import com.techreimagined.common.tileentities.generators.TileEntitySolarPanel;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
->>>>>>> development
 
 /* You are free to:
  * 
@@ -46,7 +39,6 @@ import net.minecraft.block.material.Material;
  * You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
  * No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
  */
-<<<<<<< HEAD
 public class BlockStirlingGenerator extends BlockTechBase {
     private static final PropertyBool WORKING = PropertyBool.create("working");
 
@@ -89,17 +81,6 @@ public class BlockStirlingGenerator extends BlockTechBase {
     @Override
     public int damageDropped(IBlockState state) {
         return getMetaFromState(state);
-=======
-public class BlockStirlingGenerator extends BlockTileBase {
-    public BlockStirlingGenerator() {
-        super(Material.IRON, "generator/stirling");
-        this.isBlockContainer = true;
-        this.setInternalName("stirling");
-        this.setHardness(0.2F);
-        this.setSoundType(SoundType.METAL);
-        this.setCreativeTab(TechReimaginedCreativeTabs.tabPower);
-        this.setLightOpacity(0);
->>>>>>> development
     }
 }
 
