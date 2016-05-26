@@ -11,6 +11,7 @@ message.techreimagined.panel.status=§fThe panel has §e%dT§8/§e%dT§f. Genera
 //Tools
 item.techreimagined.wrench.name=§eTechnologic Wrench
 item.techreimagined.powerprobe.name=§ePower Probe
+<<<<<<< HEAD
 item.techreimagined.fluidprobe.name=§eFluid Probe
 message.techreimagined.powerprobe.container=§e%dT§8/§e%dT§f.
 message.techreimagined.powerprobe.producer=§e%dT§8/§e%dT§f. Generating §e%dT§f a tick.
@@ -26,11 +27,21 @@ item.techreimagined.automationupgrade.name=Automation Circuit
 item.techreimagined.redstoneupgrade.name=Redstone Circuit
 item.techreimagined.craftingupgrade.name=Crafting Circuit
 tooltip.techreimagined.upgrade.text=%sWorks in any TechReimagined machine
+=======
+message.techreimagined.powerprobe.container=§e%dT§8/§e%dT
+message.techreimagined.powerprobe.producer=§e%dT§8/§e%dT§f. Generating §e%dT§f a tick.
+
+item.techreimagined.powerprobe.info=%sShows power level for Tesla machines.
+>>>>>>> development
 
 //Machines
 //Basic
 tile.techreimagined.pump.name=Fluid Translocator
+<<<<<<< HEAD
 tooltip.techreimagined.pump.text=%sIts just pump.
+=======
+tile.techreimagined.pump.info=%sIts just pump.
+>>>>>>> development
 
 
 //Ores
@@ -45,6 +56,7 @@ tile.techreimagined.block.tin.name=Tin Block
 tile.techreimagined.block.lead.name=Lead Block
 tile.techreimagined.block.silver.name=Silver Block
 tile.techreimagined.block.copper.name=Copper Block
+<<<<<<< HEAD
 tile.techreimagined.block.electrum.name=Electrum Block
 
 
@@ -52,3 +64,6 @@ tile.techreimagined.block.electrum.name=Electrum Block
 item.techreimagined.debug.name=Debugger
 item.techreimagined.tesladebug.name=Tesla Debugger
 item.techreimagined.fluiddebug.name=Fluid Debugger
+=======
+tile.techreimagined.block.electrum.name=Electrum Block
+>>>>>>> development

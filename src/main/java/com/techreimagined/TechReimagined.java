@@ -7,8 +7,11 @@ import com.techreimagined.common.util.LogHelper;
 import com.techreimagined.common.util.power.TeslaHelper;
 import com.techreimagined.proxy.IProxy;
 import com.google.common.base.Stopwatch;
+<<<<<<< HEAD
 import me.modmuss50.jsonDestroyer.JsonDestroyer;
 import net.minecraft.world.DimensionType;
+=======
+>>>>>>> development
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +27,10 @@ import java.util.concurrent.TimeUnit;
 public class TechReimagined {
     @Mod.Instance(ModInfo.MOD_ID)
     public static TechReimagined instance;
+<<<<<<< HEAD
     public static JsonDestroyer jsonDestroyer = new JsonDestroyer();
+=======
+>>>>>>> development
 
     @SidedProxy(clientSide = ModInfo.CLIENT_PROXY_CLASS, serverSide = ModInfo.SERVER_PROXY_CLASS)
     public static IProxy proxy;
@@ -59,8 +65,11 @@ public class TechReimagined {
     public void init(FMLInitializationEvent event) {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         LogHelper.info("Initialization (Started)");
+<<<<<<< HEAD
         jsonDestroyer.load();
         CableManager.init();
+=======
+>>>>>>> development
 
         TeslaHelper.load();
         proxy.registerRecipes();
@@ -74,7 +83,10 @@ public class TechReimagined {
     public void postInit(FMLPostInitializationEvent event) {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         LogHelper.info("Post Initialization (Started)");
+<<<<<<< HEAD
         CableManager.postInit();
+=======
+>>>>>>> development
 
         IntegrationsManager.instance().postInit();
 

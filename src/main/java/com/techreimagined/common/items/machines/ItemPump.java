@@ -34,7 +34,11 @@ public class ItemPump extends ItemBlock {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+<<<<<<< HEAD
         tooltip.add(String.format(I18n.format("tooltip.techreimagined.pump.text","§7")));
+=======
+        tooltip.add(String.format(I18n.format("tile.techreimagined.pump.info","§7")));
+>>>>>>> development
         super.addInformation(stack, playerIn, tooltip, advanced);
     }
 }

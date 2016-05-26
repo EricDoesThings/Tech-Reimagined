@@ -3,8 +3,11 @@ package com.techreimagined.common.tileentities.generators;
 import com.techreimagined.common.util.power.TeslaGenerator;
 import net.darkhax.tesla.api.ITeslaHolder;
 import net.darkhax.tesla.api.ITeslaProducer;
+<<<<<<< HEAD
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+=======
+>>>>>>> development
 
 /* You are free to:
  * 
@@ -24,11 +27,14 @@ import net.minecraft.util.EnumFacing;
  */
 public class SolarTeslaContainer implements ITeslaHolder, ITeslaProducer, TeslaGenerator {
 
+<<<<<<< HEAD
     private TileEntity tile;
     public SolarTeslaContainer(TileEntity tile) {
         this.tile=tile;
     }
 
+=======
+>>>>>>> development
     /**
      * The power stored by the solar container.
      */
@@ -60,6 +66,7 @@ public class SolarTeslaContainer implements ITeslaHolder, ITeslaProducer, TeslaG
 
     @Override
     public long getGeneration() {
+<<<<<<< HEAD
         long gen=20;
         if(this.tile.hasWorldObj()&&this.tile.getWorld().canSeeSky(this.tile.getPos().offset(EnumFacing.UP))) {
             if(this.tile.getWorld().isRaining()) {
@@ -76,6 +83,9 @@ public class SolarTeslaContainer implements ITeslaHolder, ITeslaProducer, TeslaG
         } else {
             return 0;
         }
+=======
+        return 6;
+>>>>>>> development
     }
 
     public void generatePower () {

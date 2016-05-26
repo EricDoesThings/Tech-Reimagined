@@ -29,6 +29,7 @@
           "all": "techreimagined:blocks/ores/ores/Lead"
         }
       },
+<<<<<<< HEAD
       "electrum": {
         "textures": {
           "all": "techreimagined:null"
@@ -44,6 +45,8 @@
           "all": "techreimagined:null"
         }
       },
+=======
+>>>>>>> development
       "nickel": {
         "textures": {
           "all": "techreimagined:blocks/ores/ores/Nickel"

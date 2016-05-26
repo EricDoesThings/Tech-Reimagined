@@ -10,7 +10,6 @@ import com.techreimagined.common.util.IOrientable;
 import com.techreimagined.common.util.IProvideRecipe;
 import com.techreimagined.common.util.Platform;
 import com.techreimagined.common.util.power.TeslaGenerator;
-import mcp.MethodsReturnNonnullByDefault;
 import net.darkhax.tesla.api.ITeslaHolder;
 import net.darkhax.tesla.api.ITeslaProducer;
 import net.darkhax.tesla.capability.TeslaCapabilities;
@@ -52,14 +51,19 @@ public class ItemPowerProbe extends ItemBase implements IProvideRecipe {
         super("tools/powerprobe");
         this.setCreativeTab(TechReimaginedCreativeTabs.tabTools);
         this.setInternalName("powerprobe");
-        this.setMaxStackSize(1);
     }
 
     @Override
     public void RegisterRecipes() {
-
+        GameRegistry.addRecipe(new ShapedOreRecipe(Items.ITEM_TOOL_WRENCH.getStack(),
+                "xxx",
+                "ryr",
+                "xxx",
+                'x', "ingotTin",
+                'y', "gearIron",
+                'r', net.minecraft.init.Items.REDSTONE
+        ));
     }
-
     @Override
     public EnumActionResult onItemUseFirst(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
         Block block = world.getBlockState(pos).getBlock();
@@ -70,17 +74,18 @@ public class ItemPowerProbe extends ItemBase implements IProvideRecipe {
         else
             container = null;
 
-        if(container == null&&tile instanceof TileEntitySolarPanel)
+        if(container.equals(null)&&(tile instanceof TileEntitySolarPanel || tile instanceof TileEntitySolarPanelAdvanced))
             container = tile.getCapability(TeslaCapabilities.CAPABILITY_HOLDER,EnumFacing.DOWN);
 
-        if (player != null) {
+        if (block != null && player != null) {
             if (Platform.isClient()&&container!=null)
-                if(container instanceof TeslaGenerator) {
-                    player.addChatMessage(new TextComponentString(I18n.format("message.techreimagined.powerprobe.producer", container.getStoredPower(), container.getCapacity(), ((TeslaGenerator) container).getGeneration())));
-                } else {
-                    player.addChatMessage(new TextComponentString(I18n.format("message.techreimagined.powerprobe.container", container.getStoredPower(), container.getCapacity())));
-                }
-            return !world.isRemote ? EnumActionResult.FAIL : EnumActionResult.PASS;
+                    if(container instanceof TeslaGenerator) {
+                        player.addChatMessage(new TextComponentString(String.format(I18n.format("message.techreimagined.powerprobe.producer", container.getStoredPower(), container.getCapacity(),((TeslaGenerator)container).getGeneration()))));
+                    } else
+                    {
+                        player.addChatMessage(new TextComponentString(String.format(I18n.format("message.techreimagined.powerprobe.container", container.getStoredPower(), container.getCapacity()))));
+                    }
+                         return !world.isRemote ? EnumActionResult.FAIL : EnumActionResult.PASS;
         }
 
         return EnumActionResult.FAIL;
@@ -92,7 +97,7 @@ public class ItemPowerProbe extends ItemBase implements IProvideRecipe {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(String.format(I18n.format("tooltip.techreimagined.powerprobe.text","§7")));
+        tooltip.add(String.format(I18n.format("item.techreimagined.powerprobe.info","§7")));
         super.addInformation(stack, playerIn, tooltip, advanced);
     }
 }
