@@ -11,4 +11,4 @@ We keep track of issues on github.
 
 Post suggestions on the forum
 
-[![Issues](https://img.shields.io/badge/Tech%20Reimagined-Forum-blue.svg)](https://github.com/TechReimagined/Tech-Reimagined/issues)
+[![Issues](https://img.shields.io/badge/Tech%20Reimagined-Forum-blue.svg)](http://mods.instituteofgamers.co.uk/forum/)
