@@ -8,3 +8,7 @@ Tech Reimagined is still in early development. Help is appreciated.
 We keep track of issues on github.
 
 [![Issues](https://img.shields.io/badge/Tech%20Reimagined-Issues-blue.svg)](https://github.com/TechReimagined/Tech-Reimagined/issues)
+
+Post suggestions on the forum
+
+[![Issues](https://img.shields.io/badge/Tech%20Reimagined-Forum-blue.svg)](https://github.com/TechReimagined/Tech-Reimagined/issues)
