@@ -1,6 +1,7 @@
 package com.techreimagined.api.registry;
 
 import com.google.common.collect.Maps;
+import com.techreimagined.common.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,39 +27,39 @@ import java.util.Map;
  * No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
  */
 public class PulverizerRecipes {
-    private Map<ItemStack, ItemStack> pulverisingList = Maps.<ItemStack, ItemStack>newHashMap();
+    private Map<ItemStack, ItemStack> pulverizingList = Maps.<ItemStack, ItemStack>newHashMap();
 
     /**
      * Adds a smelting recipe, where the input item is an instance of Block.
      */
-    public void addSmeltingRecipeForBlock(Block input, ItemStack stack, float experience)
+    public void addPulverizeRecipeForBlock(Block input, ItemStack stack, float experience)
     {
-        this.addSmelting(Item.getItemFromBlock(input), stack, experience);
+        this.addPulverize(Item.getItemFromBlock(input), stack, experience);
     }
 
     /**
      * Adds a smelting recipe using an Item as the input item.
      */
-    public void addSmelting(Item input, ItemStack stack, float experience)
+    public void addPulverize(Item input, ItemStack stack, float experience)
     {
-        this.addSmeltingRecipe(new ItemStack(input, 1, 32767), stack, experience);
+        this.addPulverizeRecipe(new ItemStack(input, 1, 32767), stack, experience);
     }
 
     /**
      * Adds a smelting recipe using an ItemStack as the input for the recipe.
      */
-    public void addSmeltingRecipe(ItemStack input, ItemStack stack, float experience)
+    public void addPulverizeRecipe(ItemStack input, ItemStack stack, float experience)
     {
-        if (getSmeltingResult(input) != null) { net.minecraftforge.fml.common.FMLLog.info("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
-        this.pulverisingList.put(input, stack);
+        if (getPulverizeResult(input) != null) { LogHelper.error("Ignored smelting recipe with conflicting input: " + input + " = " + stack); return; }
+        this.pulverizingList.put(input, stack);
     }
     /**
      * Returns the smelting result of an item.
      */
     @Nullable
-    public ItemStack getSmeltingResult(ItemStack stack)
+    public ItemStack getPulverizeResult(ItemStack stack)
     {
-        for (Map.Entry<ItemStack, ItemStack> entry : this.pulverisingList.entrySet())
+        for (Map.Entry<ItemStack, ItemStack> entry : this.pulverizingList.entrySet())
         {
             if (this.compareItemStacks(stack, (ItemStack)entry.getKey()))
             {
@@ -77,9 +78,9 @@ public class PulverizerRecipes {
         return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
     }
 
-    public Map<ItemStack, ItemStack> getpulverisingList()
+    public Map<ItemStack, ItemStack> getpulverizingList()
     {
-        return this.pulverisingList;
+        return this.pulverizingList;
     }
 
 }

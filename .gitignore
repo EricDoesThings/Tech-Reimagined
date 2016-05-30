@@ -14,5 +14,4 @@
 !/build.bat
 !/build.sh
 !/gradle.properties
-gradle/wrapper/gradle-wrapper.jar
 .DS_Store

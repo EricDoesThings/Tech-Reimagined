@@ -1,5 +1,6 @@
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.matthewprenger.cursegradle'
+apply plugin: 'net.cazzar.gradle.modsio'
 
 apply from: 'gradle/scripts/dependencies.gradle'
 apply from: 'gradle/scripts/integration.gradle'
@@ -15,12 +16,17 @@ buildscript {
             url = "http://files.minecraftforge.net/maven"
         }
         maven {
+            name = "Modmuss50"
+            url = "http://maven.modmuss50.me/"
+        }
+        maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
         classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.7"
+        classpath 'ModsIOUpload:ModsIOUpload:+'
     }
 }
 configurations.all {
@@ -33,6 +39,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 ext {
     curseApiKey = ""
     curseReleaseType = "alpha"
+	modsioApiKey = ""
 }
 
 version = minecraft_version + "-" + "b" + cibuild + "-univeral"
@@ -73,7 +80,19 @@ processResources
                 exclude 'mcmod.info'
             }
         }
+		
+ modsIO {
+        key = modsioApiKey //this is your mods.io API key, find in settings
 
+        project {
+            artifact = jar.archivePath //this is the artifact to use.
+            modid = "1187" //found in url of mod
+            minecraft = "1.9.4"
+            changelog = "ChangeLog text"
+            tag = "Dev" this is the tag that is set
+            current = true //Should this file be the recommended file on mods.io
+        }
+    }
 curseforge {
     apiKey = curseApiKey
     project {

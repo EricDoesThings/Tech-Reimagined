@@ -58,6 +58,14 @@ public class BlockStirlingGenerator extends BlockTechBase {
         return this.getDefaultState().withProperty(TECHLEVEL, TechLevel.byMeta(meta));
     }
 
+
+    //TODO: See if this is correct
+    /*@Override
+    public BlockStateContainer getBlockState() {
+        int meta = getMetaFromState(this.getBlockState().getBaseState());
+        return this.getDefaultState().withProperty(TECHLEVEL, TechLevel.byMeta(meta)).getBlock().getBlockState();
+    }*/
+
     @Override
     public int getMetaFromState(IBlockState state) {
         TechLevel tier = (TechLevel) state.getValue(TECHLEVEL);

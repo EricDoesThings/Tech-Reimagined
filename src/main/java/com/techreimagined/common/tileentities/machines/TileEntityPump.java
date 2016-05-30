@@ -1,5 +1,6 @@
 package com.techreimagined.common.tileentities.machines;
 
+import com.techreimagined.api.FluidUtils;
 import com.techreimagined.common.tileentities.TileEntityBase;
 import com.techreimagined.common.util.fluid.Tank;
 import net.darkhax.tesla.capability.TeslaCapabilities;
@@ -36,7 +37,7 @@ public class TileEntityPump extends TileEntityBase implements ITickable, IFluidH
     protected FluidStack fluid;
     protected int capacity;
     private FluidStack lastBeforeUpdate = null;
-    public static int BUCKET_VOLUME = FluidContainerRegistry.BUCKET_VOLUME;
+    public static int BUCKET_VOLUME = FluidUtils.getBucketVolume();
     public static int MAX_LIQUID = BUCKET_VOLUME * 16;
     public Tank tank = new Tank("pumpTank",MAX_LIQUID,this);
 

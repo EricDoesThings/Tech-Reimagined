@@ -38,8 +38,6 @@ public enum EnumOres implements IStringSerializable {
     //Nether
     CHROMITE("Chromite", 8,DimensionType.NETHER, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
     MAGNETITE("Magnetite", 9,DimensionType.NETHER, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.ORE, EnumOreType.GEAR, EnumOreType.FLUID),
-    //End
-
 
     // Alloys
     TITANIUM("Titanium", 10, EnumOreType.BLOCK, EnumOreType.NUGGET, EnumOreType.INGOT, EnumOreType.DUST, EnumOreType.GEAR, EnumOreType.FLUID),
@@ -70,17 +68,15 @@ public enum EnumOres implements IStringSerializable {
     private final EnumOreType[] enumOresTypeList;
 
     EnumOres(String name,int meta, EnumOreType... type) {
-        this(name,meta,null,type);
+        this(name,meta,DimensionType.OVERWORLD,type);
     }
 
     EnumOres(String name, int meta, DimensionType d, EnumOreType... oreTypes) {
         this.name = name;
         this.meta = meta;
         this.enumOresTypeList = oreTypes;
-        if(this.isTypeSet(EnumOreType.ORE)&&d!=null){
+        if(this.isTypeSet(EnumOreType.ORE)){
             this.dimension=d;
-        } else if(this.isTypeSet(EnumOreType.ORE)&&d==null) {
-            this.dimension=DimensionType.OVERWORLD;
         } else {
             this.dimension=null;
         }
