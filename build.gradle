@@ -85,11 +85,11 @@ processResources
         key = modsioApiKey //this is your mods.io API key, find in settings
 
         project {
-            artifact = jar.archivePath //this is the artifact to use.
+            artifact = jar.archivePath //this is the artifact to use. //TODO clean this
             modid = "1187" //found in url of mod
             minecraft = "1.9.4"
-            changelog = "ChangeLog text"
-            tag = "Dev" this is the tag that is set
+            changelog = "See Github at https://github.com/TechReimagined/Tech-Reimagined"
+            tag = "alpha" //this is the tag that is set
             current = true //Should this file be the recommended file on mods.io
         }
     }
