@@ -39,7 +39,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 ext {
     curseApiKey = ""
     curseReleaseType = "alpha"
-	modsioApiKey = ""
+	modsioApiKey = System.getenv('ModsIOKey')
 }
 
 version = minecraft_version + "-" + "b" + cibuild + "-univeral"
@@ -90,7 +90,7 @@ processResources
             minecraft = "1.9.4"
             changelog = "See Github at https://github.com/TechReimagined/Tech-Reimagined"
             tag = "alpha" //this is the tag that is set
-            current = true //Should this file be the recommended file on mods.io
+            current = false //Should this file be the recommended file on mods.io
         }
     }
 curseforge {
